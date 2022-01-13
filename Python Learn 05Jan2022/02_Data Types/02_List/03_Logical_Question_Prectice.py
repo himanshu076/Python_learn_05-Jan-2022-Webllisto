@@ -184,10 +184,91 @@ Sample Output 0
 #     N = int(input())
 #     listExpand(N)
 
-list = [10,9,8,7,6,5,4,3,2,1]
-N = int(input())
-for i in range(N):
-    i = input()
-    s = "print"
-    if i == s:
-        print(list)
+# list = [10,9,8,7,6,5,4,3,2,1]
+
+# def inp(a,b,c):
+    
+    
+# N = int(input())
+# for i in range(N):
+#     i = input()
+#     s = "print"
+#     if i == s:
+#         print(list)
+#     if 
+
+
+# Reverce
+# b = "Practice question of list in python"
+# print(b[-2:-5:-1])
+
+# b = "Practice question of list in python"
+# print(b[1:7:2])
+# print(b[-5:])
+# print(b[:-5])
+# print(b[-2:-8:-2])
+
+
+# def inpt(a,b,c=None):
+#     print(f'{a}({b}{c})')
+
+
+# if __name__ == '__main__':
+#     N = int(input())
+    
+#     def listExpand(N):
+#         list = []
+        
+#         for P in range(N):
+#             P = input().split(" ")
+            # a = P[-1]
+            # temp = []
+
+            # if P[0] == "insert":
+            #     list.insert(int(P[1]), (P[2]))
+            # elif P[0] == "remove":
+            #     list.remove(P[1])
+            # elif P[0] == "append":
+            #     list.append(int(P[1]))
+            # elif P[0] == "sort":
+            #     list.sort()
+            # elif P[0] == "pop":
+            #     list.pop()
+            # elif P[0] == "reverse":
+            #     list.reverse()
+            # elif P[0] == "print":
+                # print(list)
+                # a = print(int(list))
+            # else:
+                # print("Enter a valid input")
+                # listExpand(N)
+# listExpand(N)
+
+
+
+'''Q1. Write a function find(name) in python to display all the names from a list of names which are starting from alphabet 'p'.'''
+
+# list = ["kishor", "Shubham", "pooja", "digvijay", "Rathod"]
+# def searchName():
+#     for i in list:
+#         if i[0] == "p" or i[0] == "P":
+#             print(i)
+    
+# searchName()
+
+
+''' Q2. Write a function disp(name) in python to display all the names from a list of names whose length is of four characters.'''
+
+'''check if a list contain element'''
+# l1 = [2, 3, 4, 5, 5, 6, 7, 8 , 'f', 'l', 'y']
+# print('l' in l1)
+
+'''Q3. How to iterate over 2+ lists at the same time'''
+name = ["pol", "Kishor", "shivam", "dinesh"]
+animal = ["fish", "dog", "cat", "bear"]
+age = [7, 8, 5, 9]
+
+z =zip(name, animal, age)
+
+for name, animal, age in z:
+    print

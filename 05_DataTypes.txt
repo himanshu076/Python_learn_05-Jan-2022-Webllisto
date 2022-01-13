@@ -1,0 +1,9 @@
+python dtatypes
+
+1. Numeric - integer, float, complex
+2. Dictionary 
+3. boolean
+4. set
+5. sequence type - string, list, tuple
+
+
