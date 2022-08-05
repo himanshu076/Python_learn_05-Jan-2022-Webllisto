@@ -1,0 +1,74 @@
+"***********DTL - Django Template Language***********"
+followings are Typecast & Syntex for DTL:
+
+1. variable = {{cname}}
+
+2. Filter in DTL - 
+    Syntex : {{variable | filter}}
+    Example : {{name | upper}}
+
+    Some of filters take arguments.
+    Syntex : {{variable | filter : arguments}}
+    Example : {{article | truncateword:40}}
+    
+    Filter can be chained
+    Syntex : {{variable | filter | filter}}
+    Example : {{article | upper}}
+    Example : {{atricle | upper | truncateword:40}}
+
+    .
+    .
+    .
+    .
+     something around 50 filter check in documents
+
+
+3. if Tag -
+    Syntex :
+        {% if Variable %}
+        .....
+        .....
+        .....
+        {% endif %}
+    
+    Example : 
+    1.  {% if nm %}
+            <h1>Hello {{nm}}</h1>
+        {% elif %}
+
+    2.  {% if nm & st %}
+            <h1>For Course {{nm}} {{st}} Seat Available</h1>
+        {% endif %}
+    3.  {% if not st %}
+        <h1>Seat Not Available</h1>
+    {% endif %}    
+
+4. if Tag with condition
+    Syntex :
+        {% if condition %}
+            ...........
+        {% endif %}
+    
+        Example :
+            {% if nm == 'Django' %}
+`               </h1> Hello {{nm}} </h1>
+            {% endif %}
+
+        Note - All types of operator works with it.
+
+5. if Tag with filter
+    Syntex :
+        {% if variable|filter %}
+            ...........
+        {% endif %}
+    
+    Example : 
+        {% if nm|length>=6 %}
+            <h1> Hello {{nm}} </h1>
+        {% endif %}
+
+6. for & while also using here...
+    Example :
+        {% for key, value in data.items %}
+        {{key}} = {{value}}
+        {% endfor %}

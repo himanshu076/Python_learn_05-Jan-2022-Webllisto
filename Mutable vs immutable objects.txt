@@ -17,3 +17,146 @@ The mutability of an object is determined by its type.
 Important note
 Some objects contain references to other objects, these objects are called containers. Some examples of containers are a tuple, list, and dictionary. The value of an immutable container that contains a reference to a mutable object can be changed if that mutable object is changed. However, the container is still considered immutable because when we talk about the mutability of a container only the identities of the contained objects are implied.
 
+
+
+
+
+
+
+
+**********************************************************************************************************************************************************************************************
+
+
+Article
+
+Python Basics: Mutable vs Immutable Objects
+Ventsislav Yordanov
+Ventsislav Yordanov
+
+Feb 4, 2019·5 min read
+
+
+
+
+
+
+
+Source: https://www.quora.com/Can-you-suggest-some-good-books-websites-for-learning-Python-for-a-layman
+After reading this blog post you’ll know:
+What are an object’s identity, type, and value
+What are mutable and immutable objects
+Introduction (Objects, Values, and Types)
+All the data in a Python code is represented by objects or by relations between objects. Every object has an identity, a type, and a value.
+Identity
+An object’s identity never changes once it has been created; you may think of it as the object’s address in memory. The is operator compares the identity of two objects; the id() function returns an integer representing its identity.
+Type
+An object’s type defines the possible values and operations (e.g. “does it have a length?”) that type supports. The type() function returns the type of an object. An object type is unchangeable like the identity.
+Value
+The value of some objects can change. Objects whose value can change are said to be mutable; objects whose value is unchangeable once they are created are called immutable.
+The mutability of an object is determined by its type.
+Important note
+Some objects contain references to other objects, these objects are called containers. Some examples of containers are a tuple, list, and dictionary. The value of an immutable container that contains a reference to a mutable object can be changed if that mutable object is changed. However, the container is still considered immutable because when we talk about the mutability of a container only the identities of the contained objects are implied.
+In the next section, we’ll see more information and detailed examples to understand more about the differences between the mutable and immutable objects.
+Mutable and Immutable Data Types in Python
+Some of the mutable data types in Python are list, dictionary, set and user-defined classes.
+On the other hand, some of the immutable data types are int, float, decimal, bool, string, tuple, and range.
+It’s time for some examples. Let’s start by comparing the tuple (immutable) and list (mutable) data types. We can define a list using square brackets [] like this: numbers = [1, 2, 3]. To define a tuple, we just need to replace the brackets with parentheses () like this: numbers = (1, 2, 3). From both data types, we can access elements by index and we can iterate over them. The main difference is that a tuple cannot be changed once it’s defined.
+Indexing lists and tuples
+
+Output:
+1
+10
+Changing values: lists vs tuples
+
+Output:
+[100, 2, 3]
+--------------------------------------------------------------------
+TypeError                         Traceback (most recent call last)
+<ipython-input-2-286c46a29f5d> in <module>()
+      3 list_values[0] = 100
+      4 print(list_values)
+----> 5 set_values[0] = 100
+
+TypeError: 'tuple' object does not support item assignment
+We can see that when we try to change the tuple we get an error, but we don’t have that problem with the list.
+Tuple vs List Expanding
+Now, we can try to expand our list and tuple using the += operator. This will operation work for both data types. Let’s see what will happen.
+
+Output:
+2450343168136
+2450343205552
+
+2450343168136
+2450341742248
+We can see that the list identity is not changed, while the tuple identity is changed. This means that we have expanded our list, but created a completely new tuple. Lists are more memory efficient than tuples.
+Other Immutable Data Type Examples
+We have seen that some of the other immutable data types are integers and strings. Once they are initialized, their values cannot be changed.
+
+Output:
+1657696608
+1657696640
+
+Output:
+2450343168944
+2450343426208
+We see that both for the number and text variables, their identity is changed. This means that new variables are created in both cases.
+Copying Mutable Objects by Reference
+Let’s see what happens if we give two names of the same object for a mutable data types.
+
+Output:
+2450343166664
+2450343166664
+True
+[4, 5, 6, 7]
+[4, 5, 6, 7]
+We can see that the variable names have the same identity meaning that they are referencing to the same object in computer memory. Reminder: the is operator compares the identity of two objects.
+So, when we have changed the values of the second variable, the values of the first one are also changed. This happens only with the mutable objects. You can see how you can prevent this in one of my previous blog posts.
+Copying Immutable Objects
+Let’s try to do a similar example with an immutable object. We can try to copy two strings and change the value in any of them.
+
+Output:
+3063511450488
+3063511450488
+True
+
+3063551623648
+3063511450488
+False
+
+Python is awesome
+Python
+Every time when we try to update the value of an immutable object, a new object is created instead. That’s when we have updated the first string it doesn’t change the value of the second.
+The == operator
+Sometimes we don’t want to compare the identity of two objects, but to compare the values of these objects. We can do this using the == operator.
+
+Output:
+True
+False
+We can clearly see the two objects have the same values, but their identities are different.
+Immutable Object Changing Its Value
+As we said before the value of an immutable container that contains a reference to a mutable object can be changed if that mutable object is changed. Let’s see an example of this.
+
+Output:
+<class 'tuple'>
+(129392130, ['Programming', 'Machine Learning', 'Statistics'])
+(129392130, ['Programming', 'Machine Learning', 'Maths'])
+We have changed the value of the skills variable. The other variable person contains a reference to the skills variable and that’s why its value is updated, too.
+Reminder
+The object is still considered immutable because when we talk about the mutability of a container only the identities of the contained objects are implied.
+However, if your immutable object contains only immutable objects, we cannot change their value. Let’s see an example.
+
+Output:
+1657696608
+1657696032
+(42, 24, ('Python', 'pandas', 'scikit-learn'))
+1657696864
+1657696064
+(42, 24, ('Python', 'pandas', 'scikit-learn'))
+Remember when you try to update the value of an immutable object, a new object is created instead.
+Summary
+All the data in a Python code is represented by objects or by relations between objects.
+Every object has an identity, a type, and a value.
+An object’s identity never changes once it has been created. You may think of it as the object’s address in memory.
+An object’s type defines the possible values and operations.
+Objects whose value can change are said to be mutable. Objects whose value is unchangeable once they are created are called immutable.
+When we talk about the mutability of a container only the identities of the contained objects are implied.

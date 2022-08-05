@@ -1,0 +1,4 @@
+"****************Django Content****************"
+
+1. Create functyion based view.
+2. URL Dispatcher or URL Pattern inside project

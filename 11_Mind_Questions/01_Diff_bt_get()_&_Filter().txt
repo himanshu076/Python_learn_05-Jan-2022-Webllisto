@@ -1,0 +1,8 @@
+'''Difference Between get() & filter()'''
+
+1. The Difference between Django's filter() and get() methods are: get throws an error if there's no object matching the query. filter will return an empty queryset…
+
+2. Basically use get() when you want to get a single unique object, and filter() when you want to get all objects that match your lookup parameters.
+
+3. get() return perticulate object & filter() return queryset with matched list.
+

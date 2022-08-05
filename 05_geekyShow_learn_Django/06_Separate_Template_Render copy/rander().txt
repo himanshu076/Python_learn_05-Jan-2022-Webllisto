@@ -1,0 +1,5 @@
+"Render Syntex :"
+        render(request,template_name,context=dict_name,contect_type=MIME,status=none,using=none)
+
+Example :
+        render(request, 'courseone.html', context=cname, content_type='application/xhtml+xml')

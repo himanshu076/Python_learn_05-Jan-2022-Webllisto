@@ -1,0 +1,1 @@
+'''Django is working on MVT architecture'''

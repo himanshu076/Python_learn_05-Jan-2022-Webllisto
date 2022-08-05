@@ -1,0 +1,69 @@
+python Shell - Create User Commonds ------
+
+
+from app_queries.models import *
+
+# Entry created with ForeignKey using shell command *****
+# Created instance
+e2 = Entry(
+    ...:     blog_id=2,   # FireignKey Entry 
+    ...:     headline="Taste of Cheese",
+    ...:     body_text="This blog is related to Cheese.",
+    ...:     pub_date="2022-02-14",
+    ...:     mod_date="2022-02-14",
+    ...:     number_of_comments=2,
+    ...:     number_of_pingbacks=3,
+    ...:     rating=4,
+    ...: )
+    
+e2.save()  # Save the entry into DataBase.
+    
+******************************************************************************* 
+
+# ManyToMany Entry using shell command *****
+# Adding MantToMany Entry
+
+from app_queries.models import *
+
+# Created Instance
+In [2]: e = Entry.obects.get(id=2) 
+
+# Adding ManyToMany Entry into the M2M field.
+e.authors.add(Author.objects.get(id=2))
+
+# Checking Values
+In [8]: e.authors.values()
+Out[8]: <QuerySet [{'id': 2, 'name': 'Kishor', 'email': 'kishor@gmail.com'}]>
+
+*******************************************************************************
+
+# Adding Blog After created Entry ***** ForeignKey**
+
+entry = Entry.objects.get(pk=1)
+>>> cheese_blog = Blog.objects.get(name="Cheddar Talk")
+>>> entry.blog = cheese_blog
+>>> entry.save()
+
+*******************************************************************************
+
+# Adding Blog After created Entry ***** ManyToMany**
+
+>>> from blog.models import Author
+>>> joe = Author.objects.create(name="Joe")
+>>> entry.authors.add(joe)
+
+*******************************************************************************
+
+# Get data into list/Tuple/set formate....**
+
+>>> 1. entry_list = list(Entry.objects.all())
+>>> 2. entry_set = set(Entry.objects.all())
+>>> 3. entry_tuple = tuple(Entry.objects.all())
+
+*******************************************************************************
+
+
+
+
+
+

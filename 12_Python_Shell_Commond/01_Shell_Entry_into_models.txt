@@ -1,0 +1,14 @@
+python Shell - Create User Commonds ------
+
+
+from app_queries.models import CustomUser
+
+In [3]: user = CustomUser
+
+In [4]: user = CustomUser.objects.create_user("foo@gmail.com", password="foo@gmail.com")
+
+In [5]: user.is_superuser = False
+
+In [6]: user.is_staff = False
+
+In [7]: user.save()

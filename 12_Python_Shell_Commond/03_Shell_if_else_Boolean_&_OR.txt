@@ -1,0 +1,12 @@
+python Shell - Create User Commonds ------
+
+# if else statement used for data manipulation.
+
+if Entry.objects.filter(headline="Chil Beer"):
+    ...:     print("There is at least one Entry with the headline Child Beer.")
+    ...: else:
+    ...:     print("No Matches Found")
+    
+****************************************************************************************
+
+#
